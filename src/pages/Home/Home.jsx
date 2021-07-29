@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import TextField, { Input } from '@material/react-text-field';
+import MaterialIcon from '@material/react-material-icon';
 import { 
   Content, 
   SearchContainer,
@@ -15,6 +16,7 @@ const Home = () => {
         <TextField
           label='Search'
           outlined
+          trailingIcon={<MaterialIcon role="button" icon="search" />}
         >
           <Input
             value={inputValue}
@@ -22,7 +24,7 @@ const Home = () => {
           />
         </TextField>
       </SearchContainer>
-      
+
       <MapContainer>
         mapa
       </MapContainer>
