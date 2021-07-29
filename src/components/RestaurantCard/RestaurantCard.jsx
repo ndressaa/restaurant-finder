@@ -1,13 +1,21 @@
 import React from 'react';
+import ReactStars from 'react-rating-stars-component';
 
 import Card from './RestaurantCard.style';
+
+const ratingProps = {
+  count: 5,
+  value: 3,
+  edit: false,
+  isHalf: true
+};
 
 const RestaurantCard = () => {
   return (
     <Card>
       <div>
         <h2>Nome do restaurante</h2>
-        <div>Avaliação</div>
+        <ReactStars {...ratingProps}/>
         <p>Endereço</p>
       </div>
 

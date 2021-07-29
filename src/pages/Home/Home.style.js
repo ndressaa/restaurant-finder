@@ -5,10 +5,12 @@ export const Content = styled.div`
   width: 100vw;
   height: 100vh;
   display: flex;
+  font-family: 'Roboto', sans-serif;
 `;
 
 export const SideContainer = styled.aside`
   background: ghostwhite;
+  padding: 10px;
   width: 100%;
   max-width: 360px;
 `;
