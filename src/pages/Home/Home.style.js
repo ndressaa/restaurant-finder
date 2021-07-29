@@ -7,7 +7,7 @@ export const Content = styled.div`
   display: flex;
 `;
 
-export const SearchContainer = styled.aside`
+export const SideContainer = styled.aside`
   background: ghostwhite;
   width: 100%;
   max-width: 360px;

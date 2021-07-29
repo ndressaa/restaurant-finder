@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import TextField, { Input } from '@material/react-text-field';
 import MaterialIcon from '@material/react-material-icon';
+
+import RestaurantCard from '../../components/RestaurantCard/RestaurantCard';
+
 import { 
   Content, 
-  SearchContainer,
+  SideContainer,
   MapContainer
 } from './Home.style';
 
@@ -12,7 +15,7 @@ const Home = () => {
 
   return (
     <Content>
-      <SearchContainer>
+      <SideContainer>
         <TextField
           label='Search'
           outlined
@@ -23,7 +26,9 @@ const Home = () => {
             onChange={(e) => setInputValue(e.target.value)}
           />
         </TextField>
-      </SearchContainer>
+
+        <RestaurantCard />
+      </SideContainer>
 
       <MapContainer>
         mapa
