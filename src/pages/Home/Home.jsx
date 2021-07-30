@@ -4,12 +4,9 @@ import MaterialIcon from '@material/react-material-icon';
 
 import RestaurantCard from '../../components/RestaurantCard/RestaurantCard';
 import RestaurantDetails from '../../components/RestaurantDetails/RestaurantDetails';
+import { Map } from '../../components/index';
 
-import { 
-  Content, 
-  SideContainer,
-  MapContainer
-} from './Home.style';
+import Content from './Home.style';
 
 const Home = () => {
   const [inputValue, setInputValue] = useState('');
@@ -17,7 +14,7 @@ const Home = () => {
 
   return (
     <Content>
-      <SideContainer>
+      <aside>
         { !showDetails ?
           <div>
             <TextField
@@ -35,11 +32,11 @@ const Home = () => {
           </div> :
           <RestaurantDetails />
         }
-      </SideContainer>
+      </aside>
 
-      <MapContainer>
-        mapa
-      </MapContainer>
+      <main>
+        <Map />
+      </main>
     </Content>
   );
 }
