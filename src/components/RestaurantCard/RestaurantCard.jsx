@@ -3,25 +3,26 @@ import ReactStars from 'react-rating-stars-component';
 
 import Card from './RestaurantCard.style';
 
-const ratingProps = {
-  count: 5,
-  value: 3,
-  edit: false,
-  isHalf: true
-};
+const RestaurantCard = ({ restaurant }) => {
 
-const RestaurantCard = () => {
+  const ratingProps = {
+    count: 5,
+    value: restaurant.rating,
+    edit: false,
+    isHalf: true
+  };
+  
   return (
     <Card>
       <div>
-        <h2>Nome do restaurante</h2>
+        <h2>{restaurant.name}</h2>
         <ReactStars {...ratingProps}/>
-        <p>Endereço</p>
+        <p>{restaurant.vicinity || restaurant.formatted_address}</p>
       </div>
 
       <div>
         <img 
-          src="https://zellersrestaurants.com/wp-content/uploads/2019/11/Restaurant.jpg" 
+          src={restaurant.photos ? restaurant.photos[0].getUrl() : null} 
           alt="Restaurant"
           width="100px"
         />

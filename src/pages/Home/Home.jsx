@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import TextField, { Input } from '@material/react-text-field';
 import MaterialIcon from '@material/react-material-icon';
 
@@ -12,6 +13,7 @@ const Home = () => {
   const [inputValue, setInputValue] = useState('');
   const [query, setQuery] = useState(null);
   const [showDetails, setShowDetails] = useState(false);
+  const { restaurants } = useSelector((state) => state.restaurants);
 
   function handleKeyPress(e) {
     if (e.key === 'Enter') {
@@ -36,9 +38,25 @@ const Home = () => {
               />
             </TextField>
 
-            <RestaurantCard />
+            {restaurants.map((restaurant) => 
+              <>
+                <RestaurantCard
+                  key={restaurant.place_id} 
+                  restaurant={restaurant}
+                />
+                <button
+                  onClick={() => setShowDetails(true)}
+                >ver mais</button>
+              </>
+            )}
+            
           </div> :
-          <RestaurantDetails />
+          <>
+            <button
+              onClick={() => setShowDetails(false)}
+            >voltar</button>
+            <RestaurantDetails />
+          </>
         }
       </aside>
 
