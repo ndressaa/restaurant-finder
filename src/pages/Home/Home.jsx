@@ -10,7 +10,14 @@ import Content from './Home.style';
 
 const Home = () => {
   const [inputValue, setInputValue] = useState('');
+  const [query, setQuery] = useState(null);
   const [showDetails, setShowDetails] = useState(false);
+
+  function handleKeyPress(e) {
+    if (e.key === 'Enter') {
+      setQuery(inputValue)
+    }
+  }
 
   return (
     <Content>
@@ -24,6 +31,7 @@ const Home = () => {
             >
               <Input
                 value={inputValue}
+                onKeyPress={handleKeyPress}
                 onChange={(e) => setInputValue(e.target.value)}
               />
             </TextField>
@@ -35,7 +43,7 @@ const Home = () => {
       </aside>
 
       <main>
-        <Map />
+        <Map query={query} />
       </main>
     </Content>
   );
