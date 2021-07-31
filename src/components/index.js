@@ -1,1 +1,1 @@
-export { default as Map } from './Map/Map.tsx';
+export { default as Map } from './Map/Map.jsx';
