@@ -1,10 +1,13 @@
 import React from 'react';
 import Details from './RestaurantDetails.style';
 
-const RestaurantDetails = () => {
+const RestaurantDetails = (props) => {
+  const restaurant = props.restaurant;
+
   return (
     <Details>
-      detalhes do restaurante selecionado
+      <p>{restaurant.name}</p>
+      <p>{restaurant.vicinity || restaurant.formatted_address}</p>
     </Details>
   );
 }

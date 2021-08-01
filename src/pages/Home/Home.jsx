@@ -12,13 +12,21 @@ import Content from './Home.style';
 const Home = () => {
   const [inputValue, setInputValue] = useState('');
   const [query, setQuery] = useState(null);
+  const [placeId, setPlaceId] = useState(null);
   const [showDetails, setShowDetails] = useState(false);
-  const { restaurants } = useSelector((state) => state.restaurants);
+  const [restaurantDetails, setRestaurantDetails] = useState(null);
+  const { restaurants, restaurantSelected } = useSelector((state) => state.restaurants);
 
   function handleKeyPress(e) {
     if (e.key === 'Enter') {
       setQuery(inputValue)
     }
+  }
+
+  function handleShowDetails(restaurant, placeId) {
+    setPlaceId(placeId);
+    setRestaurantDetails(restaurant);
+    setShowDetails(true);
   }
 
   return (
@@ -45,7 +53,14 @@ const Home = () => {
                   restaurant={restaurant}
                 />
                 <button
-                  onClick={() => setShowDetails(true)}
+                  onClick={() => {
+                    // setShowDetails(true);
+                    // setPlaceId(restaurant.place_id);
+                    // setRestaurantDetails(restaurant);
+                    // console.log(restaurant.place_id);
+
+                    handleShowDetails(restaurant, restaurant.place_id)
+                  }}
                 >ver mais</button>
               </>
             )}
@@ -55,7 +70,8 @@ const Home = () => {
             <button
               onClick={() => setShowDetails(false)}
             >voltar</button>
-            <RestaurantDetails />
+            <RestaurantDetails restaurant={restaurantDetails}>
+            </RestaurantDetails>
           </>
         }
       </aside>
