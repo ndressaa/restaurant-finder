@@ -12,7 +12,6 @@ import Content from './Home.style';
 const Home = () => {
   const [inputValue, setInputValue] = useState('');
   const [query, setQuery] = useState(null);
-  const [placeId, setPlaceId] = useState(null);
   const [showDetails, setShowDetails] = useState(false);
   const [restaurantDetails, setRestaurantDetails] = useState(null);
   const { restaurants, restaurantSelected } = useSelector((state) => state.restaurants);
@@ -23,8 +22,7 @@ const Home = () => {
     }
   }
 
-  function handleShowDetails(restaurant, placeId) {
-    setPlaceId(placeId);
+  function handleShowDetails(restaurant) {
     setRestaurantDetails(restaurant);
     setShowDetails(true);
   }
@@ -54,12 +52,7 @@ const Home = () => {
                 />
                 <button
                   onClick={() => {
-                    // setShowDetails(true);
-                    // setPlaceId(restaurant.place_id);
-                    // setRestaurantDetails(restaurant);
-                    // console.log(restaurant.place_id);
-
-                    handleShowDetails(restaurant, restaurant.place_id)
+                    handleShowDetails(restaurant)
                   }}
                 >ver mais</button>
               </>
