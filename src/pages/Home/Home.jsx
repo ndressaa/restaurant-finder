@@ -3,9 +3,11 @@ import { useSelector } from 'react-redux';
 import TextField, { Input } from '@material/react-text-field';
 import MaterialIcon from '@material/react-material-icon';
 
-import RestaurantCard from '../../components/RestaurantCard/RestaurantCard';
-import RestaurantDetails from '../../components/RestaurantDetails/RestaurantDetails';
-import { Map } from '../../components/index';
+import { 
+  RestaurantCard, 
+  RestaurantDetails, 
+  Map 
+} from '../../components/exports';
 
 import Content from './Home.style';
 
