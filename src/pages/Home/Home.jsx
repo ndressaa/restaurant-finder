@@ -16,7 +16,7 @@ const Home = () => {
   const [query, setQuery] = useState(null);
   const [showDetails, setShowDetails] = useState(false);
   const [restaurantDetails, setRestaurantDetails] = useState(null);
-  const { restaurants, restaurantSelected } = useSelector((state) => state.restaurants);
+  const { restaurants } = useSelector((state) => state.restaurants);
 
   function handleKeyPress(e) {
     if (e.key === 'Enter') {
