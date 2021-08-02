@@ -12,7 +12,10 @@ export const MapContainer = (props) => {
   const settings = {
     centerAroundCurrentLocation: true,
     onReady: onMapReady,
-    onRecenter: onMapReady
+    onRecenter: onMapReady,
+    containerStyle: {  
+      'width': '70vw'
+    }
   };
 
   useEffect(() => {

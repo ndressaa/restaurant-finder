@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 const Content = styled.div`
-  /* background: papayawhip; */
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -11,7 +10,14 @@ const Content = styled.div`
     background: ghostwhite;
     padding: 10px;
     width: 100%;
-    max-width: 360px;
+    max-width: 30vw;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   & main {
