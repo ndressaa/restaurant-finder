@@ -20,8 +20,14 @@ const Home = () => {
 
   function handleKeyPress(e) {
     if (e.key === 'Enter') {
-      setQuery(inputValue)
+      setQuery(inputValue);
+      setShowDetails(false);
     }
+  }
+
+  function handleClick() {
+    setQuery(inputValue);
+    setShowDetails(false);
   }
 
   function handleShowDetails(restaurant) {
@@ -32,20 +38,22 @@ const Home = () => {
   return (
     <Content>
       <aside>
+        <header>
+          <TextField
+            label='Search'
+            outlined
+          >
+            <Input
+              value={inputValue}
+              onKeyPress={handleKeyPress}
+              onChange={(e) => setInputValue(e.target.value)}
+            />
+          </TextField>
+
+          <MaterialIcon role="button" icon="search" onClick={() => handleClick()}/>
+        </header>
         { !showDetails ?
           <div>
-            <TextField
-              label='Search'
-              outlined
-              trailingIcon={<MaterialIcon role="button" icon="search" />}
-            >
-              <Input
-                value={inputValue}
-                onKeyPress={handleKeyPress}
-                onChange={(e) => setInputValue(e.target.value)}
-              />
-            </TextField>
-
             {restaurants.map((restaurant) => 
               <>
                 <RestaurantCard
@@ -55,14 +63,15 @@ const Home = () => {
                 />
               </>
             )}
-            
           </div> :
-          <>
+          <div>
+            <div>
             <button
               onClick={() => setShowDetails(false)}
             >voltar</button>
+            </div>
             <RestaurantDetails restaurant={restaurantDetails} />
-          </>
+          </div>
         }
       </aside>
 

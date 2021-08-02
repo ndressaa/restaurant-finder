@@ -24,6 +24,12 @@ const Content = styled.div`
     background: lightsteelblue;
     width: 100%;
   }
+
+  .mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label,
+  .mdc-text-field--focused .mdc-text-field__input:required ~ .mdc-floating-label::after,
+  .mdc-text-field--focused .mdc-text-field__input:required ~ .mdc-notched-outline .mdc-floating-label::after {
+    color: var(--brand-red); 
+  }
 `;
 
 export default Content;
