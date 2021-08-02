@@ -51,12 +51,8 @@ const Home = () => {
                 <RestaurantCard
                   key={restaurant.place_id} 
                   restaurant={restaurant}
+                  onClick={() => {handleShowDetails(restaurant)}}
                 />
-                <button
-                  onClick={() => {
-                    handleShowDetails(restaurant)
-                  }}
-                >ver mais</button>
               </>
             )}
             
@@ -65,8 +61,7 @@ const Home = () => {
             <button
               onClick={() => setShowDetails(false)}
             >voltar</button>
-            <RestaurantDetails restaurant={restaurantDetails}>
-            </RestaurantDetails>
+            <RestaurantDetails restaurant={restaurantDetails} />
           </>
         }
       </aside>

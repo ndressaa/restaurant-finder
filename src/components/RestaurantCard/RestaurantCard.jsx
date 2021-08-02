@@ -3,7 +3,7 @@ import ReactStars from 'react-rating-stars-component';
 
 import Card from './RestaurantCard.style';
 
-const RestaurantCard = ({ restaurant }) => {
+const RestaurantCard = ({ restaurant, onClick }) => {
 
   const ratingProps = {
     count: 5,
@@ -13,7 +13,7 @@ const RestaurantCard = ({ restaurant }) => {
   };
   
   return (
-    <Card>
+    <Card onClick={onClick}>
       <div>
         <h2>{restaurant.name}</h2>
         <ReactStars {...ratingProps}/>
