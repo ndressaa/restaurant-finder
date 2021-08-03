@@ -16,8 +16,15 @@ const RestaurantCard = ({ restaurant, onClick }) => {
     <Card onClick={onClick}>
       <div>
         <h2>{restaurant.name}</h2>
-        <ReactStars {...ratingProps}/>
+        <div>
+          <ReactStars {...ratingProps}/>
+        </div>
         <p>{restaurant.vicinity || restaurant.formatted_address}</p>
+        {restaurant.opening_hours ?
+          restaurant.opening_hours.isOpen() ? <p>Aberto</p> : <p>Fechado</p>
+        :
+          null
+        }
       </div>
 
       <div>

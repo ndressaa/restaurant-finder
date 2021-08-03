@@ -6,6 +6,12 @@ const Card = styled.div`
   &:hover {
     background: lightgray;
   }
+
+  & div:nth-child(1) {
+    & div {
+      display: flex;
+    }
+  }
 `;
 
 export default Card;
