@@ -11,6 +11,13 @@ const RestaurantCard = ({ restaurant, onClick }) => {
     edit: false,
     isHalf: true
   };
+  const priceLevel = (x = restaurant.price_level) => {
+    let price = '';
+    for(let i=1; i<=x; i++) {
+      price += '$';
+    }
+    return price;
+  }
   
   return (
     <Card onClick={onClick}>
@@ -18,6 +25,7 @@ const RestaurantCard = ({ restaurant, onClick }) => {
         <h2>{restaurant.name}</h2>
         <div>
           <ReactStars {...ratingProps}/>
+          <p>{priceLevel()}</p>
         </div>
         <p>{restaurant.vicinity || restaurant.formatted_address}</p>
         {restaurant.opening_hours ?

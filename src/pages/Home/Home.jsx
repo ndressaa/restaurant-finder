@@ -12,6 +12,7 @@ import {
 import Content from './Home.style';
 
 const Home = () => {
+
   const [inputValue, setInputValue] = useState('');
   const [query, setQuery] = useState(null);
   const [showDetails, setShowDetails] = useState(false);
