@@ -5,6 +5,12 @@ const GlobalStyle = createGlobalStyle`
     --brand-red: #d00000;
     --dark-red: #9d0208;
     --mdc-theme-primary: var(--brand-red);
+    --light-gray: #e8eaed;
+    --gray: #323232;
+    --medium-gray: #808080;
+    --silver: #f0f0f0;
+    --open: #289847;
+    --closed: #d22d25;
   }
 
   * {

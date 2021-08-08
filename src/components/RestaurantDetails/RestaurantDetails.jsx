@@ -29,7 +29,7 @@ const RestaurantDetails = (props) => {
       <p>{priceLevel(restaurant.price_level)}</p>
       <hr />
       {restaurant.opening_hours ?
-          restaurant.opening_hours.isOpen() ? <p>Aberto</p> : <p>Fechado</p>
+          restaurant.opening_hours.open_now ? <p>Aberto</p> : <p>Fechado</p>
         :
           <p>Horário não informado</p>
       }

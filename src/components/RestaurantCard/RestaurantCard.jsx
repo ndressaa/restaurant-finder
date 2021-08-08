@@ -9,7 +9,9 @@ const RestaurantCard = ({ restaurant, onClick }) => {
     count: 5,
     value: restaurant.rating,
     edit: false,
-    isHalf: true
+    isHalf: true,
+    size: '22',
+    color: '#808080'
   };
   const priceLevel = (x = restaurant.price_level) => {
     let price = '';
@@ -25,11 +27,21 @@ const RestaurantCard = ({ restaurant, onClick }) => {
         <h2>{restaurant.name}</h2>
         <div>
           <ReactStars {...ratingProps}/>
-          <p>{priceLevel()}</p>
+          {restaurant.price_level ?
+            <> 
+              <span>&#9899;</span>
+              <p>{priceLevel()}</p>
+            </>
+            :
+            null
+          }
         </div>
         <p>{restaurant.vicinity || restaurant.formatted_address}</p>
         {restaurant.opening_hours ?
-          restaurant.opening_hours.isOpen() ? <p>Aberto</p> : <p>Fechado</p>
+          restaurant.opening_hours.open_now ? 
+            <p className="open">Aberto</p> 
+          : 
+            <p className="closed">Fechado</p>
         :
           null
         }
