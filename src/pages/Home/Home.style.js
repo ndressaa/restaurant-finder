@@ -45,6 +45,24 @@ const Content = styled.div`
         cursor: pointer;
       }
     }
+
+    & div button {
+      display: flex;
+      align-items: center;
+      border-radius: 50%;
+      cursor: pointer;
+      background: inherit;
+      color: var(--gray);
+      border: 1px solid var(--light-gray);
+
+      i {
+        font-size: 36px;
+      }
+
+      &:hover {
+        background: var(--silver);
+      }
+    }
   }
 
   /* TextField styles */

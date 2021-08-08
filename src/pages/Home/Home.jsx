@@ -40,17 +40,13 @@ const Home = () => {
     <Content>
       <aside>
         <header>
-          <TextField
-            label='Search'
-            outlined
-          >
+          <TextField label='Search' outlined >
             <Input
               value={inputValue}
               onKeyPress={handleKeyPress}
               onChange={(e) => setInputValue(e.target.value)}
             />
           </TextField>
-
           <MaterialIcon role="button" icon="search" onClick={() => handleClick()}/>
         </header>
         { !showDetails ?
@@ -67,9 +63,9 @@ const Home = () => {
           </div> :
           <div>
             <div>
-            <button
-              onClick={() => setShowDetails(false)}
-            >voltar</button>
+              <button onClick={() => setShowDetails(false)}>
+                <MaterialIcon icon="chevron_left" />
+              </button>
             </div>
             <RestaurantDetails restaurant={restaurantDetails} />
           </div>

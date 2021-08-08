@@ -27,7 +27,7 @@ const Card = styled.div`
       }
 
       & > span {
-        font-size: 6px;
+        font-size: 32px;
         color: var(--medium-gray);
       }
 

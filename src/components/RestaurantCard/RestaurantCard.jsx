@@ -29,7 +29,7 @@ const RestaurantCard = ({ restaurant, onClick }) => {
           <ReactStars {...ratingProps}/>
           {restaurant.price_level ?
             <> 
-              <span>&#9899;</span>
+              <span>&middot;</span>
               <p>{priceLevel()}</p>
             </>
             :
