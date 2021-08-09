@@ -40,6 +40,10 @@ const Home = () => {
     <Content>
       <aside>
         <header>
+          <h1>
+            Restaurant<b>Finder</b>
+          </h1>
+          <div>
           <TextField label='Search' outlined >
             <Input
               value={inputValue}
@@ -48,6 +52,7 @@ const Home = () => {
             />
           </TextField>
           <MaterialIcon role="button" icon="search" onClick={() => handleClick()}/>
+          </div>
         </header>
         { !showDetails ?
           <div>

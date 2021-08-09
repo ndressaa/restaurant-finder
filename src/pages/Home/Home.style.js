@@ -23,11 +23,29 @@ const Content = styled.div`
 
     & header {
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: space-between;
       gap: 12px;
 
+      h1 {
+        font-family: 'Roboto Slab', sans-serif;
+        font-weight: 400;
+        color: var(--brand-red);
+        font-size: 42px;
+
+        b {
+          font-weight: 600;
+        }
+      }
+
       & > div {
+        display: flex;
+        gap: 12px;
+        width: 100%;
+      }
+
+      & > div > div {
         width: 100%;
       }
 
